@@ -70,3 +70,29 @@ template<>
 void shipItem(const double& item) {
     std::cout << "Shipping temperature-controlled item: " << item << "°C\n";
 }
+
+int main()
+{
+    double x = 3.3; 
+    Package<int> p1(1);
+    Package<std::string> p2("C++ Primer");
+    Package<double*> p3(&x); 
+
+    Box<std::string, 3> b;
+
+
+    p1.label(); 
+    p2.label();
+    p3.label();
+
+    b.addItem("Pride and Prejudice");
+    b.addItem("When Breath Becomes Air");
+    b.addItem("The Half of It");
+    b.printItems();
+
+    shipItem(3);
+    shipItem("hello");
+    shipItem(22.5);
+
+    return 0; 
+}
